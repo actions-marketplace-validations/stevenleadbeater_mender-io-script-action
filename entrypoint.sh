@@ -10,7 +10,7 @@ update-ca-certificates
 mender-artifact write module-image \
   -T script \
   -n "$INPUT_ARTIFACT_NAME" \
-  -t "$INPUT_DEVICE_TYPE" \
+  -t "${INPUT_DEVICE_TYPE// / -t }" \
   -o "$INPUT_ARTIFACT_NAME".mender \
   -f "${INPUT_PACKAGES// / -f }"
 
